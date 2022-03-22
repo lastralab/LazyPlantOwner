@@ -1,8 +1,9 @@
 
 /*
- * Plant Watering System -
- * Upstate NY area - 4 indoor plants
- * TanisM3
+ * Plant Watering System
+ * Weather: Upstate NY area
+ * Use: Indoor plants
+ * Author: TanisM
  */
 
 int IN1 = 2;
@@ -19,8 +20,8 @@ int Pin4 = A3;
 int value4 = 0;
 
 // Dryness Threshold (near 700 is totally dry)
-int lower = 575;
-int upper = 600;
+int lower = 575; // Big plants
+int upper = 600; // Small plants
 
 void setup() {
   Serial.begin(9600);
