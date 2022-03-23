@@ -21,7 +21,7 @@ int value4 = 0;
 
 // Dryness Threshold (near 700 is totally dry)
 int lower = 575; // Big plants
-int upper = 600; // Small plants
+int upper = 590; // Small plants
 
 void setup() {
   Serial.begin(9600);
@@ -43,7 +43,7 @@ void loop() {
   Serial.println("H U M I D I T Y   L E V E L S:");
   Serial.print("Romina: "); 
   value1 = (analogRead(Pin1));
-  if(value1 > lower) {
+  if(value1 >= lower) {
     Serial.println(lower - value1);
     digitalWrite(IN1, LOW); // ON
   } else {
@@ -53,7 +53,7 @@ void loop() {
   delay(500);
   Serial.print("Romero: "); 
   value2 = (analogRead(Pin2));
-  if(value2 > upper) {
+  if(value2 >= upper) {
     Serial.println(upper - value2);
     digitalWrite(IN2, LOW); // ON
   } else {
@@ -63,7 +63,7 @@ void loop() {
   delay(500);
   Serial.print("Savvy: "); 
   value3 = (analogRead(Pin3));
-  if(value3 > upper) {
+  if(value3 >= upper) {
     Serial.println(upper - value3);
     digitalWrite(IN3, LOW); // ON
   } else {
@@ -73,7 +73,7 @@ void loop() {
   delay(500);
   Serial.print("Romina's Daughter: "); 
   value4 = (analogRead(Pin4));
-  if(value4 > lower) {
+  if(value4 >= lower) {
     Serial.println(lower - value4);
     digitalWrite(IN4, LOW); // ON
   } else {
